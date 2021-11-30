@@ -14,6 +14,9 @@ body {
   border-collapse: collapse;
   text-align: center;
 }
+.table-contacts tbody tr:nth-child(even) {
+  background: #FFF7F1;
+}
 .table-contacts thead {
   background-color: #FFF1E6;
   border: solid 1px #FFC7A0;
@@ -34,7 +37,6 @@ body {
 }
 .table-contacts td {
   padding: 20px;
-  border-bottom: solid 1px grey;
 }
 button {
   padding: 8px 10px;
