@@ -15,10 +15,10 @@ function App() {
     setMyContacts([randomContact[0], ...myContacts])
   }
 
-  const deleteContact = (i) => {
-    let copyContacts = [...myContacts]
-    copyContacts.splice(i, 1)
-    setMyContacts(copyContacts)
+  const deleteContact = (id) => {
+    // filter returns a new object array, so we don't need to make a shallow copy 
+    let updatedContacts = myContacts.filter(item => item.id !== id)
+    setMyContacts(updatedContacts)
   }
 
   const sortByName = () => {
@@ -78,7 +78,7 @@ function App() {
                 <td>{ contact.wonOscar && "🏆" }</td>
                 <td>{ contact.wonEmmy && "🌟" }</td>
                 <td>
-                  <button onClick={ () => deleteContact(i)}>Delete</button>
+                  <button onClick={ () => deleteContact(contact.id)}>Delete</button>
                 </td>
               </tr>
               )
